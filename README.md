@@ -2,6 +2,8 @@
 
 ![SwiftOptimizer Logo](images/SwiftOptimizerlogo.png)
 
+![download_count](https://img.shields.io/github/downloads/SwiftyPop/SwiftOptimizer/total)
+
 
 ## Project Overview
 
