@@ -2,9 +2,6 @@
 
 ![SwiftOptimizer Logo](images/SwiftOptimizerlogo.png)
 
-## Project Background
-
-SwifttOptimizer is a complete **Rust rewrite** of the original **Oneclick-V7.0.bat** project. The original batch script automated various system and gaming performance tweaks using Windows command-line utilities. This Rust rewrite aims to modernize the tool with enhanced stability, structure, and performance, while maintaining the same optimization goals.
 
 ## Project Overview
 
