@@ -4,3 +4,38 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
+# ----------------------------------------------------------------------
+# Core Asynchronous and Networking
+# ----------------------------------------------------------------------
+# The runtime for asynchronous operations (required for networking).
+# Features: 'rt-multi-thread' for a capable async runtime, 'macros' for #[tokio::main]
+tokio = { version = "1.48", features = ["rt-multi-thread", "macros"] }
+
+# HTTP client for downloading external tools.
+# Features: 'json' for easy JSON handling (used by serde/dependency manager), 'rustls-tls' for secure connections.
+reqwest = { version = "0.12", features = ["json", "rustls-tls"] }
+
+# ----------------------------------------------------------------------
+# Serialization and Deserialization (for DependencyManager/Config)
+# ----------------------------------------------------------------------
+# Used for parsing or generating configuration, logs, or dependency manifests (essential for your DependencyManager)
+serde = { version = "1.0", features = ["derive"] }
+# To enable JSON support for serde (useful for config files)
+serde_json = "1.0"
+
+# ----------------------------------------------------------------------
+# Windows and System Operations
+# ----------------------------------------------------------------------
+# Enables safe, idiomatic access to the Windows Registry.
+winreg = "0.55"
+
+# For hashing downloaded files (checksum verification in dependency_manager.rs)
+sha2 = "0.10"
+
+# ----------------------------------------------------------------------
+# Logging and Error Handling
+# ----------------------------------------------------------------------
+# Standard logging facade
+log = "0.4"
+# Logging implementation to print messages to the console based on environment variables.
+env_logger = "0.11"
