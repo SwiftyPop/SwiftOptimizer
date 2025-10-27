@@ -78,8 +78,8 @@ Alternatively, you can navigate to the `target/release` directory after building
 
 ## Legacy Reference
 
-**`Oneclick-V7.0.bat`** — The original batch-based optimizer that inspired this rewrite. Its functionality, logic flow, and tweak sets form the foundation of SwifttOptimizer’s architecture, now rebuilt in Rust for improved reliability and maintainability.
+[**`Oneclick-V7.0.bat`**](https://github.com/QuakedK/Oneclick) — The original batch-based optimizer that inspired this rewrite. Its functionality, logic flow, and tweak sets form the foundation of SwifttOptimizer’s architecture, now rebuilt in Rust for improved reliability and maintainability.
 
 ## Project Background
 
-SwifttOptimizer is a complete **Rust rewrite** of the original **Oneclick-V7.0.bat** project. The original batch script automated various system and gaming performance tweaks using Windows command-line utilities. This Rust rewrite aims to modernize the tool with enhanced stability, structure, and performance, while maintaining the same optimization goals.
+SwifttOptimizer is a complete **Rust rewrite** of the original [**Oneclick-V7.0.bat**](https://github.com/QuakedK/Oneclick) project. The original batch script automated various system and gaming performance tweaks using Windows command-line utilities. This Rust rewrite aims to modernize the tool with enhanced stability, structure, and performance, while maintaining the same optimization goals.
