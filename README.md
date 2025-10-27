@@ -13,6 +13,7 @@ SwifttOptimizer is a **Rust-based command-line utility for Windows** designed to
 ## Features
 
 SwifttOptimizer provides a comprehensive set of optimization features, accessible through an interactive, colored CLI menu:
+[CLI menu](https://i.imgur.com/V1OVnNJ.png)
 
 ### Core Actions:
 *   **Create Restore Point**: Creates a system restore point, allowing you to revert changes if needed.
