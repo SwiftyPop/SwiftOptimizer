@@ -1,4 +1,4 @@
-# SwifttOptimizer (Rust Rewrite of OneClick Optimizer)
+# SwifttOptimizer
 
 ![SwiftOptimizer Logo](images/SwiftOptimizerlogo.png)
 
