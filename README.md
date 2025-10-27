@@ -7,7 +7,7 @@
 
 ## Project Overview
 
-SwifttOptimizer is a **Rust-based command-line utility for Windows** designed to apply performance tweaks, manage dependencies, and perform system cleaning. It offers a **menu-driven interface** that replicates and enhances the behavior of the original batch script, providing better error handling, modularity, and cross-version compatibility.
+SwifttOptimizer is a **Rust-based command-line utility for Windows** designed to apply performance tweaks, and perform system cleaning. It offers a **menu-driven interface** that replicates and enhances the behavior of the original batch script, providing better error handling, modularity, and cross-version compatibility.
 
 ## Features
 
