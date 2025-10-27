@@ -1,4 +1,4 @@
-# SwifttOptimizer
+# SwiftOptimizer
 
 ![SwiftOptimizer Logo](images/SwiftOptimizerlogo.png)
 
