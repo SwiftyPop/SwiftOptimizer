@@ -39,3 +39,11 @@ sha2 = "0.10"
 log = "0.4"
 # Logging implementation to print messages to the console based on environment variables.
 env_logger = "0.11"
+
+# For retrieving network adapter information
+ipconfig = "0.3.0"
+
+colored = "2.0"
+
+# For querying system information like total memory
+sysinfo = "0.29.0"

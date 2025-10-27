@@ -86,7 +86,7 @@ impl DependencyManager {
         deps.insert(
             "nvidia_inspector".to_string(),
             Dependency {
-                url: "https://github.com/Orbmu2k/nvidiaProfileInspector/releases/download/2.4.0.4/nvidiaProfileInspector.zip".to_string(),
+                url: "https://github.com/Orbmu2k/nvidiaProfileInspector/releases/download/2.4.0.29/nvidiaProfileInspector.zip".to_string(),
                 dest_path: format!("{}\\Nvidia\\nvidiaProfileInspector", TOOLS_DIR),
                 is_archive: true,
                 archive_format: Some(ArchiveFormat::Zip),
@@ -158,79 +158,10 @@ impl DependencyManager {
 
         // ========== EXTRAS ==========
 
-        // Process Destroyer
-        deps.insert(
-            "process_destroyer".to_string(),
-            Dependency {
-                url: "https://github.com/QuakedK/Process-Destroyer/releases/download/tweak/Oneclick-Process-Destroyer-2.1.bat".to_string(),
-                dest_path: format!("{}\\Process Destroyer\\Process Destroyer 2.1.bat", TOOLS_DIR),
-                is_archive: false,
-                archive_format: None,
-                required_for: vec!["extras".to_string()],
-                checksum: None,
-                description: "Process Destroyer - Advanced system service disabler".to_string(),
-            },
-        );
 
-        // Fortnite Optimizer Tools
-        deps.insert(
-            "fortnite_tools".to_string(),
-            Dependency {
-                url: "https://github.com/QuakedK/Oneclick/raw/refs/heads/main/Downloads/FortniteOptimizerTools.zip".to_string(),
-                dest_path: format!("{}\\Fortnite Optimizer Tools", TOOLS_DIR),
-                is_archive: true,
-                archive_format: Some(ArchiveFormat::Zip),
-                required_for: vec!["fortnite_optimizer".to_string()],
-                checksum: None,
-                description: "Fortnite optimization configs and tools".to_string(),
-            },
-        );
 
         // ========== APP INSTALLER RESOURCES ==========
 
-        // Logitech Memory Manager
-        deps.insert(
-            "logitech_omm".to_string(),
-            Dependency {
-                url: "https://download01.logi.com/web/ftp/pub/techsupport/gaming/OnboardMemoryManager_2.2.5062.exe".to_string(),
-                dest_path: format!("{}\\App Installer\\OnboardMemoryManager_2.2.5062.exe", TOOLS_DIR),
-                is_archive: false,
-                archive_format: None,
-                required_for: vec!["app_installer".to_string()],
-                checksum: None,
-                description: "Logitech Onboard Memory Manager".to_string(),
-            },
-        );
-
-        // Dcontrol (standalone download)
-        deps.insert(
-            "dcontrol_standalone".to_string(),
-            Dependency {
-                url: "https://github.com/QuakedK/Downloads/raw/refs/heads/main/Dcontrol.zip"
-                    .to_string(),
-                dest_path: format!("{}\\App Installer\\Dcontrol", TOOLS_DIR),
-                is_archive: true,
-                archive_format: Some(ArchiveFormat::Zip),
-                required_for: vec!["app_installer".to_string()],
-                checksum: None,
-                description: "Dcontrol - Windows Defender management tool".to_string(),
-            },
-        );
-
-        // HidUsbF
-        deps.insert(
-            "hidusbf".to_string(),
-            Dependency {
-                url: "https://github.com/LordOfMice/hidusbf/raw/refs/heads/master/hidusbf.zip"
-                    .to_string(),
-                dest_path: format!("{}\\App Installer\\hidusbf", TOOLS_DIR),
-                is_archive: true,
-                archive_format: Some(ArchiveFormat::Zip),
-                required_for: vec!["app_installer".to_string()],
-                checksum: None,
-                description: "HidUsbF - USB polling rate adjustment tool".to_string(),
-            },
-        );
 
         deps
     }
@@ -332,21 +263,9 @@ impl DependencyManager {
 
         match format {
             Some(ArchiveFormat::Zip) => {
-                // Use tar command (built into Windows 10+)
-                let status = Command::new("tar")
+                Command::new("tar")
                     .args(&["-xf", archive_path, "-C", dest_path])
                     .status()?;
-
-                if !status.success() {
-                    // Fallback to PowerShell
-                    let ps_script = format!(
-                        "Expand-Archive -Path '{}' -DestinationPath '{}' -Force",
-                        archive_path, dest_path
-                    );
-                    Command::new("powershell")
-                        .args(&["-Command", &ps_script])
-                        .status()?;
-                }
             }
             Some(ArchiveFormat::SevenZ) => {
                 // Use PowerShell for 7z files
@@ -486,11 +405,7 @@ impl DependencyManager {
             .map(|dep| PathBuf::from(&dep.dest_path))
     }
 
-    /// Get a specific executable path within a dependency
-    pub fn get_exe_path(&self, dep_name: &str, exe_name: &str) -> Option<PathBuf> {
-        self.get_dependency_path(dep_name)
-            .map(|path| path.join(exe_name))
-    }
+
 
     /// List all available dependencies
     #[allow(dead_code)] // Suppress unused warning
@@ -524,10 +439,7 @@ impl DependencyManager {
         println!("🧹 Cleaning up temporary files...");
 
         // Remove specific temporary directories
-        let temp_dirs = vec![
-            format!("{}\\App Installer", TOOLS_DIR),
-            format!("{}\\Process Destroyer", TOOLS_DIR),
-        ];
+                let temp_dirs: Vec<String> = vec![];
 
         for dir in temp_dirs {
             if Path::new(&dir).exists() {
