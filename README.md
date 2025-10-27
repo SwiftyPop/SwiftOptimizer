@@ -1,6 +1,6 @@
 # SwifttOptimizer (Rust Rewrite of OneClick Optimizer)
 
-![SwifttOptimizer Banner](https://raw.githubusercontent.com/QuakedK/Oneclick/main/Images/Banner.png)
+![SwiftOptimizer Logo](images/SwiftOptimizerlogo.png)
 
 ## Project Background
 
@@ -13,7 +13,7 @@ SwifttOptimizer is a **Rust-based command-line utility for Windows** designed to
 ## Features
 
 SwifttOptimizer provides a comprehensive set of optimization features, accessible through an interactive, colored CLI menu:
-[CLI menu](https://i.imgur.com/V1OVnNJ.png)
+![CLI Menu Screenshot](images/swiftoptimizer-cli-menu.png)
 
 ### Core Actions:
 *   **Create Restore Point**: Creates a system restore point, allowing you to revert changes if needed.
